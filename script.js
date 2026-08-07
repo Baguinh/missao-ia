@@ -1,11 +1,11 @@
-const botoes = document.querySelectorAll(".btn");
+document.getElementById("medo").onclick = function(){
 
-botoes.forEach(botao => {
+alert("Gabriel ficou assustado!");
 
-    botao.addEventListener("click", () => {
+}
 
-        alert("Você escolheu: " + botao.innerText);
+document.getElementById("bom").onclick = function(){
 
-    });
+alert("Gabriel ficou maravilhado!");
 
-});
+}

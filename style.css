@@ -1,107 +1,155 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
 }
 
 body{
 
-    background:#0b0b12;
+height:100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+display:flex;
+justify-content:center;
+align-items:center;
 
-    height:100vh;
+background:#08080D;
 
-    font-family:'Poppins',sans-serif;
+font-family:'Chakra Petch',sans-serif;
+
+overflow:hidden;
+
 }
 
-.container{
+/* brilho de fundo */
 
-    width:700px;
+body::before{
 
-    background:#181824;
+content:"";
 
-    border-radius:18px;
+position:absolute;
 
-    padding:50px;
+width:800px;
+height:800px;
 
-    text-align:center;
+background:radial-gradient(circle,#00E6FF18 0%,transparent 70%);
 
-    box-shadow:0 0 25px rgba(0,0,0,.55);
+filter:blur(60px);
+
+}
+
+.card{
+
+position:relative;
+
+width:760px;
+
+background:#141822;
+
+padding:55px;
+
+border-radius:18px;
+
+text-align:center;
+
+box-shadow:
+
+0 0 20px rgba(0,0,0,.6),
+0 0 80px rgba(0,255,255,.05);
+
+border:1px solid rgba(255,255,255,.05);
 
 }
 
 h1{
 
-    color:#43E7F8;
+color:#4DE9FF;
 
-    font-size:58px;
+font-size:64px;
 
-    line-height:1.05;
+font-weight:700;
 
-    margin-bottom:35px;
+line-height:0.95;
 
-    font-family:'Orbitron',sans-serif;
+letter-spacing:1px;
 
-    text-shadow:0 0 12px rgba(67,231,248,.25);
+margin-bottom:35px;
+
+text-shadow:
+
+0 0 12px #00e6ff40;
 
 }
 
 p{
 
-    color:white;
+color:white;
 
-    font-size:23px;
+font-size:27px;
 
-    line-height:1.6;
+line-height:1.45;
 
-    font-weight:600;
+font-weight:500;
 
-    margin-bottom:45px;
-
-}
-
-.btn{
-
-    width:100%;
-
-    height:65px;
-
-    border:none;
-
-    border-radius:12px;
-
-    font-size:24px;
-
-    font-weight:700;
-
-    margin-top:18px;
-
-    cursor:pointer;
-
-    transition:.25s;
-}
-
-.btn:hover{
-
-    transform:scale(1.02);
+margin-bottom:45px;
 
 }
 
-.btn1{
+button{
 
-    background:#5d6076;
+width:100%;
 
-    color:white;
+height:65px;
+
+border:none;
+
+border-radius:9px;
+
+margin-top:18px;
+
+font-size:27px;
+
+font-family:'Chakra Petch';
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.25s;
 
 }
 
-.btn2{
+button:hover{
 
-    background:#42F4FF;
+transform:scale(1.02);
 
-    color:#111;
+}
+
+#medo{
+
+background:#626A83;
+
+color:white;
+
+}
+
+#medo:hover{
+
+background:#707891;
+
+}
+
+#bom{
+
+background:#45F3FF;
+
+color:#111;
+
+}
+
+#bom:hover{
+
+background:#72F7FF;
 
 }
