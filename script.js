@@ -8,7 +8,10 @@ const perguntas = [
   {
     enunciado:
       "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
-    alternativas: ["Isso é assustador!", "Isso é maravilhoso!"],
+    alternativas: [
+      "Isso é assustador!",
+      "Isso é maravilhoso!"
+    ],
   },
   {
     enunciado:
@@ -46,8 +49,41 @@ const perguntas = [
 
 let atual = 0;
 let perguntaAtual;
+
 function mostraPergunta() {
   perguntaAtual = perguntas[atual];
+
   caixaPerguntas.textContent = perguntaAtual.enunciado;
+
+  caixaAlternativas.innerHTML = "";
+
+  perguntaAtual.alternativas.forEach((alternativa) => {
+    const botao = document.createElement("button");
+
+    botao.textContent = alternativa;
+
+    botao.addEventListener("click", () => {
+      atual++;
+
+      if (atual < perguntas.length) {
+        mostraPergunta();
+      } else {
+        mostraResultado();
+      }
+    });
+
+    caixaAlternativas.appendChild(botao);
+  });
 }
+
+function mostraResultado() {
+  caixaPerguntas.textContent = "";
+  caixaAlternativas.innerHTML = "";
+
+  textoResultado.textContent =
+    "Parabéns! Você chegou ao final do questionário.";
+
+  caixaResultado.style.display = "block";
+}
+
 mostraPergunta();
