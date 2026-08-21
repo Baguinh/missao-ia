@@ -1,11 +1,11 @@
-document.getElementById("medo").onclick = function(){
-
-alert("Gabriel ficou assustado!");
-
-}
-
-document.getElementById("bom").onclick = function(){
-
-alert("Gabriel ficou maravilhado!");
-
-}
+const caixaPrincipal = document.querySelector(".caixa-principal");
+const perguntas = [
+  {
+    enunciado: "Pergunta 1",
+    alternativas: ["Alternativa 1", "Alternativa 2"],
+  },
+  {
+    enunciado: "Pergunta 2",
+    alternativas: ["Alternativa 1", "Alternativa 2"],
+  },
+];
