@@ -45,7 +45,7 @@ const perguntas = [
 ];
 
 let atual = 0;
-let respostas = [];
+let perguntaAtual= [];
 
 function mostraPergunta() {
   perguntaAtual = perguntas[atual];
