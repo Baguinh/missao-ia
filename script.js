@@ -48,21 +48,22 @@ const perguntas = [
 ];
 
 let atual = 0;
-let perguntaAtual;
+let respostas = [];
 
 function mostraPergunta() {
-  perguntaAtual = perguntas[atual];
+  const perguntaAtual = perguntas[atual];
 
   caixaPerguntas.textContent = perguntaAtual.enunciado;
-
   caixaAlternativas.innerHTML = "";
 
-  perguntaAtual.alternativas.forEach((alternativa) => {
+  perguntaAtual.alternativas.forEach((alternativa, indice) => {
     const botao = document.createElement("button");
 
     botao.textContent = alternativa;
 
     botao.addEventListener("click", () => {
+      respostas.push(indice);
+
       atual++;
 
       if (atual < perguntas.length) {
@@ -80,8 +81,18 @@ function mostraResultado() {
   caixaPerguntas.textContent = "";
   caixaAlternativas.innerHTML = "";
 
-  textoResultado.textContent =
-    "Parabéns! Você chegou ao final do questionário.";
+  const respostasIA = respostas.filter((resposta) => resposta === 1).length;
+
+  if (respostasIA >= 3) {
+    textoResultado.textContent =
+      "Você demonstra bastante interesse e confiança no uso da Inteligência Artificial. Para você, a IA pode ser uma ferramenta importante para aprender, criar e resolver problemas, desde que seja utilizada com responsabilidade.";
+  } else if (respostasIA >= 2) {
+    textoResultado.textContent =
+      "Você tem uma visão equilibrada sobre a Inteligência Artificial. Reconhece suas possibilidades, mas também entende que é importante ter cuidado, revisar informações e manter o pensamento crítico.";
+  } else {
+    textoResultado.textContent =
+      "Você demonstra uma postura mais cuidadosa em relação à Inteligência Artificial. Para você, é importante compreender os riscos e limites dessa tecnologia antes de utilizá-la.";
+  }
 
   caixaResultado.style.display = "block";
 }
