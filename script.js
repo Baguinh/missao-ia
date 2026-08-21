@@ -7,7 +7,7 @@ const pergunta1 = "Pergunta 1";
 const pergunta2 = "Pergunta 2";
 const pergunta1 = "Pergunta 3";
 const pergunta2 = "Pergunta 4";
-const perguntas = [
+const perguntas = ["Pergunta 1", "Pergunta 2"];
   {
     enunciado:
       "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
